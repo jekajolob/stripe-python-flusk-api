@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Success</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="flex flex-col items-center justify-center h-screen text-green-600 text-xl"
+    >
+      <img
+        src="{{ url_for('static', filename='Stripe_Logo.png') }}"
+        alt="Logo"
+        class="w-[200px] h-auto mb-5"
+      />
+      <h2>🎉 Payment successful! Thank you!</h2>
+      <a href="/" class="mt-4 text-purple-600 hover:text-purple-700"
+        >Return to Home</a
+      >
+    </div>
+  </body>
+</html>

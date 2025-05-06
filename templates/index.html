@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stripe Checkout</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="bg-gray-100 flex flex-col items-center justify-center h-screen">
+        <img
+        src="{{ url_for('static', filename='Stripe_Logo.png') }}"
+        alt="Logo"
+        class="w-[200px] h-auto mb-5"
+      />
+  <h1 class="text-3xl font-bold mb-4">Buy a Magic Wand 🪄</h1>
+  <button id="checkout-button" class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700">
+    Buy for $15
+  </button>
+
+  <script>
+    document.getElementById("checkout-button").addEventListener("click", () => {
+      fetch("/create-checkout-session", {
+        method: "POST",
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.url) {
+            window.location = data.url;
+          }
+        });
+    });
+  </script>
+  </div>
+</body>
+</html>
