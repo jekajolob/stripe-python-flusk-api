@@ -23,7 +23,7 @@ A simple and secure payment integration using Stripe Checkout and Flask. This pr
 1. Clone the repository:
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/jekajolob/stripe-python-flusk-api.git
 cd stripe-python-flask-api
 ```
 
